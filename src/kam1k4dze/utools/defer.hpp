@@ -28,7 +28,7 @@ template <class F> deferrer<F> operator*(defer_dummy, F f) { return {f}; }
  * void foo() {
  *  FILE* file = fopen("file.txt", "r");
  *  if (!file) return;
- *  defer fclose(file);
+ *  defer {fclose(file);};
  *  ...
  * } // fclose(file) is called here
  *
